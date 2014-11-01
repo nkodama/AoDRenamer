@@ -5,17 +5,17 @@ using System.Windows.Forms;
 namespace AoDRenamer
 {
     /// <summary>
-    /// メインフォーム
+    ///     メインフォーム
     /// </summary>
     internal partial class MainForm : Form
     {
         /// <summary>
-        /// リネームエンジン
+        ///     リネームエンジン
         /// </summary>
         private readonly AoDRenamerEngine _engine;
 
         /// <summary>
-        /// コンストラクタ
+        ///     コンストラクタ
         /// </summary>
         internal MainForm()
         {
@@ -33,17 +33,17 @@ namespace AoDRenamer
         }
 
         /// <summary>
-        /// タイトル文字列を更新する
+        ///     タイトル文字列を更新する
         /// </summary>
         private void UpdateTitle()
         {
             Text = !string.IsNullOrEmpty(AoDRenamer.VersionName)
-                       ? string.Format("AoD Renamer Ver {0}", AoDRenamer.VersionName)
-                       : "AoDRenamer";
+                ? string.Format("AoD Renamer Ver {0}", AoDRenamer.VersionName)
+                : "AoDRenamer";
         }
 
         /// <summary>
-        /// 参照ボタン押下時の処理
+        ///     参照ボタン押下時の処理
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -61,7 +61,7 @@ namespace AoDRenamer
         }
 
         /// <summary>
-        /// 開始ボタン押下時の処理
+        ///     開始ボタン押下時の処理
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -88,7 +88,7 @@ namespace AoDRenamer
         }
 
         /// <summary>
-        /// 終了ボタン押下時の処理
+        ///     終了ボタン押下時の処理
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -98,33 +98,33 @@ namespace AoDRenamer
         }
 
         /// <summary>
-        /// フォルダをドロップした時の処理
+        ///     フォルダをドロップした時の処理
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-		private void OnFormDragDrop(object sender, DragEventArgs e)
+        private void OnFormDragDrop(object sender, DragEventArgs e)
         {
             var fileNames = (string[]) e.Data.GetData(DataFormats.FileDrop, false);
             folderNameTextBox.Text = fileNames[0];
         }
 
         /// <summary>
-		/// フォルダをドラッグした時の処理
+        ///     フォルダをドラッグした時の処理
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-		private void OnFormDragEnter(object sender, DragEventArgs e)
+        private void OnFormDragEnter(object sender, DragEventArgs e)
         {
             e.Effect = (e.Data.GetDataPresent(DataFormats.FileDrop)) ? DragDropEffects.Copy : DragDropEffects.None;
         }
 
         /// <summary>
-        /// ログを追加する
+        ///     ログを追加する
         /// </summary>
         /// <param name="s"></param>
         internal void AppendLog(string s)
         {
             logRichTextBox.AppendText(s);
-		}
+        }
     }
 }

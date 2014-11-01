@@ -5,17 +5,17 @@ using System.Windows.Forms;
 namespace AoDRenamer
 {
     /// <summary>
-    /// アプリケーションクラス
+    ///     アプリケーションクラス
     /// </summary>
     public static class AoDRenamer
     {
         /// <summary>
-        /// バージョン名
+        ///     バージョン名
         /// </summary>
         public static string VersionName = "";
 
         /// <summary>
-        /// エントリーポイント
+        ///     エントリーポイント
         /// </summary>
         [STAThread]
         public static void Main()

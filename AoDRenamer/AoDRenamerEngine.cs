@@ -4,27 +4,27 @@ using System.Text;
 namespace AoDRenamer
 {
     /// <summary>
-    /// リネームエンジン
+    ///     リネームエンジン
     /// </summary>
     internal class AoDRenamerEngine
     {
         /// <summary>
-        /// メインフォーム
+        ///     メインフォーム
         /// </summary>
         private readonly MainForm _mainForm;
 
         /// <summary>
-        /// INIファイルの格納場所
+        ///     INIファイルの格納場所
         /// </summary>
         private string _iniFolderName;
 
         /// <summary>
-        /// 相対パス名
+        ///     相対パス名
         /// </summary>
         private string _relativePathName;
 
         /// <summary>
-        /// コンストラクタ
+        ///     コンストラクタ
         /// </summary>
         /// <param name="mainForm">メインフォーム</param>
         internal AoDRenamerEngine(MainForm mainForm)
@@ -33,24 +33,24 @@ namespace AoDRenamer
         }
 
         /// <summary>
-        /// 基準フォルダ名
+        ///     基準フォルダ名
         /// </summary>
         internal string BaseFolderName { get; set; }
 
         /// <summary>
-        /// 拡張モードかどうか
+        ///     拡張モードかどうか
         /// </summary>
         internal bool ExtendedMode { get; set; }
 
         /// <summary>
-        /// リネームを開始する
+        ///     リネームを開始する
         /// </summary>
         /// <param name="typeIndex">パッチの種類</param>
         internal void Start(int typeIndex)
         {
             AppendLog(!string.IsNullOrEmpty(AoDRenamer.VersionName)
-                          ? string.Format("AoD Renamer Ver {0}\n\n", AoDRenamer.VersionName)
-                          : "AoD Renamer\n\n");
+                ? string.Format("AoD Renamer Ver {0}\n\n", AoDRenamer.VersionName)
+                : "AoD Renamer\n\n");
             SetGameType(typeIndex);
 
             RenameFiles();
@@ -61,7 +61,7 @@ namespace AoDRenamer
         }
 
         /// <summary>
-        /// INIファイルの格納場所を設定する
+        ///     INIファイルの格納場所を設定する
         /// </summary>
         /// <param name="typeIndex">コンボボックスのインデックス値</param>
         private void SetGameType(int typeIndex)
@@ -91,7 +91,7 @@ namespace AoDRenamer
         }
 
         /// <summary>
-        /// INIファイルの格納場所を自動認識で設定する
+        ///     INIファイルの格納場所を自動認識で設定する
         /// </summary>
         private void SetPatchTypeAutoDetect()
         {
@@ -134,7 +134,7 @@ namespace AoDRenamer
         }
 
         /// <summary>
-        /// ファイルを順にリネームする
+        ///     ファイルを順にリネームする
         /// </summary>
         private void RenameFiles()
         {
@@ -181,7 +181,7 @@ namespace AoDRenamer
         }
 
         /// <summary>
-        /// ファイルをリネームする
+        ///     ファイルをリネームする
         /// </summary>
         /// <param name="originalFileName">変更前のファイル名</param>
         /// <param name="targetFileName">変更先のファイル名</param>
@@ -224,7 +224,7 @@ namespace AoDRenamer
         }
 
         /// <summary>
-        /// ファイルを順に削除する
+        ///     ファイルを順に削除する
         /// </summary>
         private void DeleteFiles()
         {
@@ -266,7 +266,7 @@ namespace AoDRenamer
         }
 
         /// <summary>
-        /// ファイルを削除する
+        ///     ファイルを削除する
         /// </summary>
         /// <param name="targetFileName">削除対象のファイル名</param>
         private void DeleteFile(string targetFileName)
@@ -287,7 +287,7 @@ namespace AoDRenamer
         }
 
         /// <summary>
-        /// ログを出力する
+        ///     ログを出力する
         /// </summary>
         /// <param name="s">出力する文字列</param>
         private void AppendLog(string s)
@@ -297,7 +297,7 @@ namespace AoDRenamer
     }
 
     /// <summary>
-    /// ゲームの種類
+    ///     ゲームの種類
     /// </summary>
     internal enum GameType
     {
